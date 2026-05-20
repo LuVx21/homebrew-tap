@@ -1,8 +1,8 @@
 cask "openwarp" do
   arch arm: "arm64", intel: "intel"
-  version "2026.05.19.preview"
-  sha256 arm:   "d4abd9d57056c3b90e0044e366ecfb403fbcf7cee45702821983394e8475fbab",
-         intel: "64eb6053b8f11e5dadadc658d0dcee467c581eacc76621156c7867cd986ee6c0"
+  version "2026.05.20.preview"
+  sha256 arm:   "7a49688d56dbf3dece7b7c99bd8b012db8f424a50ad2df470f24ca9d95b1d88e",
+         intel: "3211ae26e5452a8d5f79ca1be59e64151af3abaebf9be1b617ebde31e57d10b7"
 
   url "https://github.com/zerx-lab/warp/releases/download/v#{version}/OpenWarp-#{arch}.dmg"
 
