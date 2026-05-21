@@ -54,3 +54,12 @@ jobs:
         if: steps.update.outputs.changes == '0'
         run: |
           echo "No version updates needed"
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: update-versions
+    if: always()
+    steps:
+      - name: 提醒
+        run: |
+          echo "Job finished with status: ${{ needs.update-versions.result }}"
