@@ -1,0 +1,18 @@
+class Warp < Formula
+  sha256 "<SHA256_OF_TARBALL>"
+  url "https://github.com/xxxx/xxxx/archive/refs/tags/v1.0.0.tar.gz" # 替换为真实下载地址
+
+  depends_on "go" => :build # 如果是 Go 项目
+
+  desc "CLI tool"
+  homepage "https://github.com/xxxx/xxxx"
+
+  def install
+    system "make", "build" # 根据项目的构建方式调整
+    bin.install "warp"
+  end
+
+  test do
+    assert_match "warp version", shell_output("#{bin}/warp --version")
+  end
+end
