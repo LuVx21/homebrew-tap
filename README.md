@@ -1,5 +1,5 @@
 
-自动更新:
+Actions自动更新:
 | rb                   | APP                   | Apple Silicon      | Intel              |
 | :------------------- | :-------------------- | :----------------- | :----------------- |
 | Casks/clashx-meta.rb | MetaCubeX/ClashX.Meta | ClashX Meta.zip    |                    |

@@ -64,7 +64,7 @@ func main() {
 	lines, _ := ReadLines(filepath.Join(cur, "README.md"))
 	from, to := -1, -1
 	for i, line := range lines {
-		if line == "自动更新:" {
+		if line == "Actions自动更新:" {
 			from = i + 1
 			continue
 		}
