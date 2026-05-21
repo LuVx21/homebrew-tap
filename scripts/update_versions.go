@@ -13,6 +13,31 @@ import (
 	"strings"
 )
 
+var (
+	versionRe = regexp.MustCompile(`(?m)^\s*version\s+"([^"]+)"`)
+	dualRe    = regexp.MustCompile(`(?m)^\s*sha256\s+arm:\s*"([^"]+)",\s*\n\s*intel:\s*"([^"]+)"`)
+	singleRe  = regexp.MustCompile(`(?m)^\s*sha256\s+"([^"]+)"`)
+
+	// 字符串优先级（越低越旧）
+	versionOrder = map[string]int{"preview": 0, "alpha": 1, "beta": 2, "rc": 3, "": 4}
+)
+
+type (
+	jsonObject = map[string]any
+
+	version struct {
+		v                      string
+		appleName, appleSha256 string
+		intelName, intelSha256 string
+	}
+	Row struct {
+		RB           string
+		APP          string
+		AppleSilicon string
+		Intel        string
+	}
+)
+
 func ReadLines(path string) ([]string, error) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -58,15 +83,6 @@ func main() {
 	}
 }
 
-var (
-	versionRe = regexp.MustCompile(`(?m)^\s*version\s+"([^"]+)"`)
-	dualRe    = regexp.MustCompile(`(?m)^\s*sha256\s+arm:\s*"([^"]+)",\s*\n\s*intel:\s*"([^"]+)"`)
-	singleRe  = regexp.MustCompile(`(?m)^\s*sha256\s+"([^"]+)"`)
-
-	// 字符串优先级（越低越旧）
-	versionOrder = map[string]int{"preview": 0, "alpha": 1, "beta": 2, "rc": 3, "": 4}
-)
-
 func aaa(rbPath string, row Row) {
 	lines, _ := ReadLines(rbPath)
 	curVersion := ""
@@ -90,7 +106,7 @@ func aaa(rbPath string, row Row) {
 	var latest jsonObject
 	json.Unmarshal(body, &latest)
 	tagName := strings.TrimPrefix(latest["tag_name"].(string), "v")
-	fmt.Println("当前版本", curVersion, "最新版本", tagName)
+	fmt.Println(row.APP, "当前版本: "+curVersion, "最新版本: "+tagName)
 	if !compareVersion(curVersion, tagName) {
 		return
 	}
@@ -136,22 +152,7 @@ func replaceVersionAndSHA256(rbPath string, v version) error {
 	// 3️⃣ 单平台 sha256（兜底）
 	text = singleRe.ReplaceAllString(text, fmt.Sprintf("  sha256 \"%s\"", v.appleSha256))
 
-	return os.WriteFile(rbPath+".txt", []byte(text), 0644)
-}
-
-type jsonObject = map[string]any
-
-type version struct {
-	v                      string
-	appleName, appleSha256 string
-	intelName, intelSha256 string
-}
-
-type Row struct {
-	RB           string
-	APP          string
-	AppleSilicon string
-	Intel        string
+	return os.WriteFile(rbPath, []byte(text), 0644)
 }
 
 func parseMarkdownTable(lines []string) (r []Row) {
@@ -177,21 +178,20 @@ func parseMarkdownTable(lines []string) (r []Row) {
 	return r
 }
 
-// major := "2026"
-// minor := "05"
-// patch := "20"
-// pre := "preview"
-func compareVersion(o, n string) bool {
-	oparts, nparts := strings.Split(o, "."), strings.Split(n, ".")
+func compareVersion(old, now string) bool {
+	oparts, nparts := strings.Split(old, "."), strings.Split(now, ".")
 	maxLen := max(len(oparts), len(nparts))
-	for i := 0; i < maxLen; i++ {
+	for i := range maxLen {
 		ov, nv := partValue(oparts, i), partValue(nparts, i)
+		if ov == nv {
+			continue
+		}
 		return nv > ov
 	}
 	return false
 }
 func partValue(parts []string, idx int) int {
-	if idx >= len(parts) {
+	if idx < 0 || idx >= len(parts) {
 		return 0
 	}
 	s := parts[idx]
@@ -202,11 +202,4 @@ func partValue(parts []string, idx int) int {
 		return v
 	}
 	return 100 + int(s[0])
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
