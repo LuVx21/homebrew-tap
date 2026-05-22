@@ -1,4 +1,4 @@
-cask "zap" do
+cask "luvx_zap" do
   arch arm: "arm64", intel: "intel"
   version "2026.05.22.preview"
   sha256 arm:   "49f0a1cf53005a89d8e442569f08ce9558cb777c9c46986e74806d50823b80b0",
