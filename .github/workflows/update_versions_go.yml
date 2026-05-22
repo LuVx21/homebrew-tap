@@ -15,6 +15,9 @@ on:
       - 'Casks/**'
       - 'Formula/**'
 
+permissions:
+  contents: write  # 允许写入仓库内容（提交代码）
+
 jobs:
   update-versions:
     runs-on: ubuntu-latest
