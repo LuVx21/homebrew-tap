@@ -1,8 +1,8 @@
 cask "zap" do
   arch arm: "arm64", intel: "intel"
-  version "2026.05.20.preview"
-  sha256 arm:   "7a49688d56dbf3dece7b7c99bd8b012db8f424a50ad2df470f24ca9d95b1d88e",
-         intel: "3211ae26e5452a8d5f79ca1be59e64151af3abaebf9be1b617ebde31e57d10b7"
+  version "2026.05.22.preview"
+  sha256 arm:   "49f0a1cf53005a89d8e442569f08ce9558cb777c9c46986e74806d50823b80b0",
+         intel: "343a5dfdf455c4c3bba8a2ea1c80e7823920f0fce2a7f0911c44151707ea8186"
 
   url "https://github.com/zerx-lab/zap/releases/download/v#{version}/Zap-#{arch}.dmg"
 
