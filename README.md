@@ -3,7 +3,7 @@ Actions自动更新:
 | rb                   | APP                   | Apple Silicon   | Intel         |
 | :------------------- | :-------------------- | :-------------- | :------------ |
 | Casks/clashx-meta.rb | MetaCubeX/ClashX.Meta | ClashX Meta.zip |               |
-| Casks/zap.rb         | zerx-lab/zap          | Zap-arm64.dmg   | Zap-intel.dmg |
+| Casks/luvx-zap.rb    | zerx-lab/zap          | Zap-arm64.dmg   | Zap-intel.dmg |
 
 
 非自动更新:
