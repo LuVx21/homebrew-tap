@@ -118,9 +118,17 @@ func aaa(rbPath string, row Row) {
 	}
 	for _, asset := range latest["assets"].([]any) {
 		aa := asset.(jsonObject)
-		name := aa["label"].(string)
+		fmt.Println("测试测试:", "label", aa["label"], "name", aa["name"])
+		name := ""
+		if aa["label"] != nil {
+			name = aa["label"].(string)
+		} else {
+			if aa["name"] != nil {
+				name = aa["name"].(string)
+			}
+		}
 		if name == "" {
-			name = aa["name"].(string)
+			continue
 		}
 		sha256 := strings.TrimPrefix(aa["digest"].(string), "sha256:")
 		if sha256 == "" {
