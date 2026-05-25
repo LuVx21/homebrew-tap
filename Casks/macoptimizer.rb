@@ -5,11 +5,11 @@ cask "macoptimizer" do
          intel: "9a6910cbebedc3a84ef8f031823dc3710698578b757a100d313d762d29e1e116"
 
   url "https://github.com/ddlmanus/MacOptimizer/releases/download/v#{version}/MacOptimizer-v#{version}-#{arch}.dmg"
-  name "MacOptimizer"
+  name "Mac优化大师"
   desc "System cleaner and optimizer for macOS"
   homepage "https://github.com/ddlmanus/MacOptimizer"
 
-  app "Mac优化大师.app", target: "MacOptimizer.app"
+  app "Mac优化大师.app", target: "Mac优化大师.app"
 
   zap trash: [
     "~/Library/Application Support/com.ddlmanus.macoptimizer",
