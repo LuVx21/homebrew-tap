@@ -2,7 +2,7 @@ cask "swiftmtp" do
   version "1.2.1"
   sha256 "33a217c1ac06255523331df574bf887c55fe81d7dd497a652cea2851c20816fa"
 
-  url "https://github.com/Neighbor-Z/SwiftMTP/releases/download/v1.2/SwiftMTP-#{version}.dmg"
+  url "https://github.com/Neighbor-Z/SwiftMTP/releases/download/v#{version}/SwiftMTP-#{version}.dmg"
 
   name "SwiftMTP"
   desc "Android File Transfer tool for macOS with AI supercharged"
