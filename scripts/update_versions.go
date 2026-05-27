@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	versionRe = regexp.MustCompile(`(?m)^\s*version\s+"([^"]+)"`)
-	dualRe    = regexp.MustCompile(`(?m)^\s*sha256\s+arm:\s*"([^"]+)",\s*\n\s*intel:\s*"([^"]+)"`)
-	singleRe  = regexp.MustCompile(`(?m)^\s*sha256\s+"([^"]+)"`)
+	versionRe = regexp.MustCompile(`(?m)^\s*version\s+"([^"]*)"`)
+	dualRe    = regexp.MustCompile(`(?m)^\s*sha256\s+arm:\s*"([^"]*)",\s*\n\s*intel:\s*"([^"]*)"`)
+	singleRe  = regexp.MustCompile(`(?m)^\s*sha256\s+"([^"]*)"`)
 
 	// 字符串优先级（越低越旧）
 	versionOrder = map[string]int{"preview": 0, "alpha": 1, "beta": 2, "rc": 3, "": 4}
