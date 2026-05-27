@@ -122,7 +122,8 @@ func aaa(rbPath string, row Row) {
 		name := ""
 		if aa["label"] != nil {
 			name = aa["label"].(string)
-		} else {
+		}
+		if name == "" {
 			if aa["name"] != nil {
 				name = aa["name"].(string)
 			}
