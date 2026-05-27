@@ -1,6 +1,6 @@
 cask "luvx-zap" do
   arch arm: "arm64", intel: "intel"
-  version "2026.05.26.1"
+  version "2026.05.26.2"
   sha256 arm:   "",
          intel: ""
 
