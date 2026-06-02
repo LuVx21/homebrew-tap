@@ -1,4 +1,4 @@
-class "luvx-kkv" < Formula
+class LuvxKkv < Formula
   url "https://github.com/LuVx21/shell.git",
       revision: "512a9bd9875c05e2ec69a01716d470a34c8d889e"
   version "0.0.1"
