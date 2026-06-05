@@ -1,6 +1,6 @@
 class LuvxKv < Formula
   url "https://github.com/LuVx21/coding-go.git",
-      revision: "2d7b9a81f3994e06b02fa80f5709d6dbf5d86dc9"
+      revision: "9a7bbc82950284d4f697ed095d36ced55c48d97e"
   version "0.0.1"
 
   desc "golang 实现的简易本地kv存储"
