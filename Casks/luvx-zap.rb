@@ -1,8 +1,8 @@
 cask "luvx-zap" do
   arch arm: "arm64", intel: "intel"
-  version "2026.06.04.1"
-  sha256 arm:   "1cb82fbefed08ce852c0e426605019f509679fa520ec16910faa6b6000a80a9b",
-         intel: "5ce54c0ba95150e31e581226a87c0b8b56bdb20690f07a13d1fa1a00982da82d"
+  version "2026.06.16.1"
+  sha256 arm:   "5406a8c5ec0a0facbd5e66b835d2c724a19c3d8461f08e1578bb84d953f32dfc",
+         intel: "29cd8aa0b419ab30836ae31810ed5887ff2169978564df3122f13dd7f44f58d2"
 
   url "https://github.com/zerx-lab/zap/releases/download/v#{version}/Zap-#{arch}.dmg"
 
