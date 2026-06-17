@@ -105,7 +105,10 @@ func aaa(rbPath string, row Row) {
 	body, _ := io.ReadAll(resp.Body)
 	var latest jsonObject
 	json.Unmarshal(body, &latest)
-	tagName := strings.TrimPrefix(latest["tag_name"].(string), "v")
+	tagName := ""
+	if _, ok := latest["tag_name"]; ok {
+		tagName = strings.TrimPrefix(latest["tag_name"].(string), "v")
+	}
 	fmt.Println(row.APP, "当前版本: "+curVersion, "最新版本: "+tagName)
 	if !compareVersion(curVersion, tagName) {
 		return
