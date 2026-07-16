@@ -16,6 +16,7 @@ cask "swiftmtp" do
   auto_updates true
 
   app "SwiftMTP.app"
+  binary "#{appdir}/SwiftMTP.app/Contents/MacOS/SwiftMTP", target: "SwiftMTP"
 
   zap trash: [
   ]
