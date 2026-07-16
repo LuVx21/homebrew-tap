@@ -1,6 +1,6 @@
 cask "swiftmtp" do
   version "1.2.3"
-  sha256 "6648e6de1625149e23077c1c9943687b6f3d27df3a7524405bd1c84c3b5eebd7"
+  sha256 "8cbc281907fc04ab9f6593d545025be50bb354a4ce3c24188adbf4d20c4fc680"
 
   url "https://github.com/Neighbor-Z/SwiftMTP/releases/download/v#{version}/SwiftMTP-#{version}.dmg"
 
