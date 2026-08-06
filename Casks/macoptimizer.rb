@@ -9,7 +9,8 @@ cask "macoptimizer" do
   desc "System cleaner and optimizer for macOS"
   homepage "https://github.com/ddlmanus/MacOptimizer"
 
-  app "MacOptimizer-v#{version}-#{arch}.app", target: "MacOptimizer.app"
+  # app "MacOptimizer-v#{version}-#{arch}.app", target: "MacOptimizer.app"
+  app "Mac优化大师.app", target: "MacOptimizer.app"
 
   zap trash: [
     "~/Library/Application Support/com.ddlmanus.macoptimizer",
