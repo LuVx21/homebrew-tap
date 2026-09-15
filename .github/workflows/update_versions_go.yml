@@ -35,6 +35,7 @@ jobs:
       - name: 运行Go代码
         id: update
         run: |
+          chmod +x ./scripts/*.sh && for f in ./scripts/*.sh; do ./"$f"; done
           go run ./scripts/update_versions.go
           echo "changes=$(git diff --name-only | wc -l)" >> $GITHUB_OUTPUT
           # if git diff --quiet; then
