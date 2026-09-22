@@ -1,4 +1,4 @@
-cask "macoptimizer" do
+cask "luvx-macoptimizer" do
   arch arm: "AppleSilicon", intel: "Intel"
   version "5.0"
   sha256 arm:   "68ae036bef1418c37ef0522c7cdc7f1d37978c1f7f9487306c4bddeda4122403",
