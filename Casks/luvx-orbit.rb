@@ -1,5 +1,4 @@
 cask "luvx-orbit" do
-  arch arm: "AppleSilicon", intel: "Intel"
   version "1.7.0"
   sha256 arm:   "2f324b531e46a02bdffa380beb66beca44aab68a39dedb523d3fbf3ae903dafe",
          intel: "2f324b531e46a02bdffa380beb66beca44aab68a39dedb523d3fbf3ae903dafe"

@@ -1,5 +1,4 @@
 cask "luvx-hongguo" do
-  arch arm: "AppleSilicon", intel: "Intel"
   version "1.2.16"
   sha256 arm:   "f5f567df0a9b28bf999cec04ce28207fba2059a10d1f8a243f0bbdb9c8ec45f7",
          intel: "f5f567df0a9b28bf999cec04ce28207fba2059a10d1f8a243f0bbdb9c8ec45f7"

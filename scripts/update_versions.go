@@ -122,7 +122,6 @@ func aaa(rbPath string, row Row) {
 	}
 	for _, asset := range latest["assets"].([]any) {
 		aa := asset.(jsonObject)
-		fmt.Println("测试测试:", "label", aa["label"], "name", aa["name"])
 		name := ""
 		if aa["label"] != nil {
 			name = aa["label"].(string)
@@ -146,8 +145,6 @@ func aaa(rbPath string, row Row) {
 			v.intelSha256 = sha256
 		}
 	}
-	fmt.Println("更新文件信息:", curVersion, "-->", v.v)
-	fmt.Println(v.appleName+": "+v.appleSha256, v.intelName+": "+v.intelSha256)
 	replaceVersionAndSHA256(rbPath, v)
 }
 
