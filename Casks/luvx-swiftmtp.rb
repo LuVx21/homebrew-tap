@@ -1,4 +1,4 @@
-cask "swiftmtp" do
+cask "luvx-swiftmtp" do
   version "1.2.5"
   sha256 "fe7599066feb47884c0d5b305e59bca1734c74bf8449a3f4a81ebcebf153799a"
 

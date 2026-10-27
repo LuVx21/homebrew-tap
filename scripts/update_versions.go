@@ -110,7 +110,7 @@ func aaa(rbPath string, row Row) {
 	if _, ok := latest["tag_name"]; ok {
 		tagName = strings.TrimPrefix(latest["tag_name"].(string), "v")
 	}
-	fmt.Printf("%-30s 当前版本: %-15s 最新版本:%-15s \n", row.APP, curVersion, tagName)
+	fmt.Printf("%-30s 当前版本: %-15s 最新版本: %-15s \n", row.APP, curVersion, tagName)
 	if tagName == "" || latest["assets"] == nil || !compareVersion(curVersion, tagName) {
 		return
 	}
