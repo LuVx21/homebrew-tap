@@ -1,9 +1,9 @@
 cask "task-tick" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "1.25.0"
-  sha256 arm:   "b9ffc3e14e9a8f16a36d21b2cf8e6811eded91f43c328830ded50f10d0b0052b",
-         intel: "8e2e8494d06633f3e17089bc4e17beedc6f253c6859cba1280e7673ccb03a8ff"
+  version "1.25.1"
+  sha256 arm:   "49d76a8f8256df6bf1e74707f565b79b6b82898306e5ffcff23766d2d8708602",
+         intel: "2557d3cddb38c0d7d4bdc500319df4332bb0f5c9916e17499e2cf05ffe482849"
 
   url "https://github.com/lifedever/TaskTick/releases/download/v#{version}/TaskTick-#{version}-#{arch}.dmg"
   name "TaskTick"
