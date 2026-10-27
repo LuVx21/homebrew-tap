@@ -12,5 +12,9 @@ cask "luvx-hongguo" do
   app "红果短剧.app", target: "红果短剧.app"
 
   zap trash: [
+    "~/Library/Application Support/hgplayer",
+    "~/Library/Caches/com.wails.hgplayer",
+    "~/Library/Preferences/com.wails.hgplayer.plist",
+    "~/Library/WebKit/com.wails.hgplayer"
   ]
 end
