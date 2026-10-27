@@ -25,9 +25,9 @@ formula_urls+=(
 )
 
 for url in "${cask_urls[@]}"; do
-    curl -fsSL ${url} > ./Casks/$(basename "$url")
+    curl -fsSL ${url} > ./Casks/copy/$(basename "$url")
 done
 
 for url in "${formula_urls[@]}"; do
-    curl -fsSL ${url} > ./Formula/$(basename "$url")
+    curl -fsSL ${url} > ./Formula/copy/$(basename "$url")
 done
