@@ -15,6 +15,6 @@ cask "luvx-hongguo" do
     "~/Library/Application Support/hgplayer",
     "~/Library/Caches/com.wails.hgplayer",
     "~/Library/Preferences/com.wails.hgplayer.plist",
-    "~/Library/WebKit/com.wails.hgplayer"
+    "~/Library/WebKit/com.wails.hgplayer",
   ]
 end

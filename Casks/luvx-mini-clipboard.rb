@@ -1,4 +1,4 @@
-cask "mini-clipboard" do
+cask "luvx-mini-clipboard" do
   version "1.0.3"
   sha256 "12ce98b8955bf13d8429e4dc2396f3ace13fcdf0a4c8a2a58dd42022e5034dc2"
 

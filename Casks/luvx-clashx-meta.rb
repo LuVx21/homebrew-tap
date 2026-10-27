@@ -1,4 +1,4 @@
-cask "clashx-meta" do
+cask "luvx-clashx-meta" do
   version "1.4.47"
   sha256 "cc76aa2e561df8e127147324c60a787522001aa0f71ebe9b394ea8e23d809e40"
 
@@ -16,7 +16,11 @@ cask "clashx-meta" do
   app "ClashX Meta.app"
 
   zap trash: [
-    "~/Library/Preferences/com.metacubex.ClashX.meta.plist",
+    "~/Library/Application Support/com.metacubex.ClashX.meta",
+    "~/Library/Caches/com.MetaCubeX.ClashX.meta",
     "~/Library/Cookies/com.metacubex.ClashX.meta.binarycookies",
+    "~/Library/HTTPStorages/com.metacubex.ClashX.meta*",
+    "~/Library/Logs/ClashX Meta",
+    "~/Library/Preferences/com.metacubex.ClashX.meta.plist",
   ]
 end

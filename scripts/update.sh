@@ -6,6 +6,7 @@ github="raw.githubusercontent.com"
 cask_urls=(
     "https://${github}/lifedever/homebrew-tap/refs/heads/main/Casks/pastememo.rb"
     "https://${github}/lifedever/homebrew-tap/refs/heads/main/Casks/task-tick.rb"
+    "https://${github}/chen08209/homebrew-tap/refs/heads/main/Casks/flclash.rb"
 )
 
 # 常用
