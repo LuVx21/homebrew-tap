@@ -11,6 +11,7 @@ cask_urls=(
 # 常用
 cask_urls+=(
     "https://${github}/Homebrew/homebrew-cask/refs/heads/main/Casks/d/dropbox.rb"
+    "https://${github}/Homebrew/homebrew-cask/refs/heads/main/Casks/o/orbit.rb"
 )
 
 # 非官方
