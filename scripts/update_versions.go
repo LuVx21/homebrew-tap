@@ -120,8 +120,8 @@ func aaa(rbPath string, row Row) {
 
 	v := version{
 		v:         tagName,
-		appleName: strings.ReplaceAll(row.AppleSilicon, "${VERSION}", tagName),
-		intelName: strings.ReplaceAll(row.Intel, "${VERSION}", tagName),
+		appleName: strings.ReplaceAll(row.AppleSilicon, "#{VERSION}", tagName),
+		intelName: strings.ReplaceAll(row.Intel, "#{VERSION}", tagName),
 	}
 	for _, asset := range latest["assets"].([]any) {
 		aa := asset.(jsonObject)
