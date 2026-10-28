@@ -108,7 +108,6 @@ func aaa(rbPath string, row Row) {
 	body, _ := io.ReadAll(resp.Body)
 	var latest jsonObject
 	json.Unmarshal(body, &latest)
-	// TODO 检查响应体
 	tagName := ""
 	if _, ok := latest["tag_name"]; ok {
 		tagName = strings.TrimPrefix(latest["tag_name"].(string), "v")
@@ -129,10 +128,8 @@ func aaa(rbPath string, row Row) {
 		if aa["label"] != nil {
 			name = aa["label"].(string)
 		}
-		if name == "" {
-			if aa["name"] != nil {
-				name = aa["name"].(string)
-			}
+		if name == "" && aa["name"] != nil {
+			name = aa["name"].(string)
 		}
 		if name == "" {
 			continue
