@@ -78,8 +78,8 @@ func main() {
 	}
 	rows := parseMarkdownTable(lines[from : to+1])
 	for _, row := range rows {
-		aaa(filepath.Join(cur, row.RB), row)
 		fmt.Println(strings.Repeat("-", 80))
+		aaa(filepath.Join(cur, row.RB), row)
 	}
 }
 
@@ -95,11 +95,14 @@ func aaa(rbPath string, row Row) {
 		}
 	}
 	if curVersion == "" {
+		fmt.Printf("%-40s 当前版本获取失败 %v`\n", row.APP, err)
 		return
 	}
 	_url := fmt.Sprintf("https://api.github.com/repos/%s/releases/latest", row.APP)
 	resp, err := http.Get(_url)
-	if err != nil {
+	if err != nil || resp.StatusCode/100 != 2 {
+		fmt.Printf("%-40s 请求github api失败 %v`\n", row.APP, err)
+		return
 	}
 	defer resp.Body.Close()
 	body, _ := io.ReadAll(resp.Body)
@@ -110,7 +113,7 @@ func aaa(rbPath string, row Row) {
 	if _, ok := latest["tag_name"]; ok {
 		tagName = strings.TrimPrefix(latest["tag_name"].(string), "v")
 	}
-	fmt.Printf("%-30s 当前版本: %-15s 最新版本: %-15s \n", row.APP, curVersion, tagName)
+	fmt.Printf("%-40s 当前版本: %-15s 最新版本: %-15s \n", row.APP, curVersion, tagName)
 	if tagName == "" || latest["assets"] == nil || !compareVersion(curVersion, tagName) {
 		return
 	}
