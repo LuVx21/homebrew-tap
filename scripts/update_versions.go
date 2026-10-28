@@ -95,7 +95,7 @@ func aaa(rbPath string, row Row) {
 		}
 	}
 	if curVersion == "" {
-		fmt.Printf("%-40s 当前版本获取失败 %v`\n", row.APP, err)
+		fmt.Printf("%-40s 当前版本获取失败 %v`\n", row.APP)
 		return
 	}
 	_url := fmt.Sprintf("https://api.github.com/repos/%s/releases/latest", row.APP)
