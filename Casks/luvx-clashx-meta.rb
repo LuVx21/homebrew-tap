@@ -14,6 +14,11 @@ cask "luvx-clashx-meta" do
 
   app "ClashX Meta.app"
 
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/ClashX Meta.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/com.metacubex.ClashX.meta",
     "~/Library/Caches/com.MetaCubeX.ClashX.meta",

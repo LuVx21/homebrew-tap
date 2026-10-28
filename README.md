@@ -20,3 +20,5 @@ Actions自动更新:
 | Casks/luvx-mini-clipboard.rb | PGshen/mini-clipboard | Mini-Clipboard.dmg                 |       |
 | Casks/luvx-open-note.rb      | The-Flash-7/open-note | OpenNote-v#{VERSION}-mac_arm64.dmg |       |
 |                              |                       |                                    |       |
+
+https://github.com/waligoraamodio288-rgb/hongguo-desktop-releases

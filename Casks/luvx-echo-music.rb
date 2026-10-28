@@ -11,6 +11,13 @@ cask "luvx-echo-music" do
 
   app "EchoMusic.app"
 
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/EchoMusic.app"]
+  end
+
   zap trash: [
+    "~/Library/Logs/EchoMusic",
+    "~/Library/Preferences/com.hoowhoami.echomusic.plist",
   ]
 end

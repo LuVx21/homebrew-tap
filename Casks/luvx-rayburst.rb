@@ -11,6 +11,15 @@ cask "luvx-rayburst" do
 
   app "Rayburst.app"
 
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Rayburst.app"]
+  end
+
   zap trash: [
+    "~/Library/Application Support/dev.aninsomniacy.rayburst",
+    "~/Library/Caches/dev.aninsomniacy.rayburst",
+    "~/Library/Logs/dev.aninsomniacy.rayburst",
+    "~/Library/WebKit/dev.aninsomniacy.rayburst",
   ]
 end
