@@ -20,7 +20,9 @@ cask "luvx-zap" do
   app "Zap.app"
 
   zap trash: [
-    "~/Library/Preferences/dev.zap.Zap.plist",
+    "~/.zap",
     "~/Library/Application Support/dev.zap.Zap",
+    "~/Library/Logs/zap.log*",
+    "~/Library/Preferences/dev.zap.Zap.plist",
   ]
 end
