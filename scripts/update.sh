@@ -20,7 +20,7 @@ cask_urls+=(
 
 # 非官方
 formula_urls=(
-
+    "https://${github}/omlahore/homebrew-tap/refs/heads/main/Formula/removemacai.rb"
 )
 # 常用
 formula_urls+=(
