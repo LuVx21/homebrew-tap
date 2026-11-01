@@ -31,10 +31,10 @@ type (
 		intelName, intelSha256 string
 	}
 	Row struct {
-		RB           string
-		APP          string
-		AppleSilicon string
-		Intel        string
+	RB           string `json:"rb"`
+	APP          string `json:"app"`
+	AppleSilicon string `json:"appleSilicon"`
+	Intel        string `json:"intel"`
 	}
 )
 
