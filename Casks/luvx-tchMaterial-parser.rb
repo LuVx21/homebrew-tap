@@ -1,4 +1,4 @@
-cask "luvx-tchMaterial-parser" do
+cask "luvx-tchmaterial-parser" do
   arch arm: "arm64", intel: "x64"
 
   version "4.4"
