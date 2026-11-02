@@ -10,6 +10,11 @@ cask "luvx-hongguo" do
 
   app "红果短剧.app", target: "红果短剧.app"
 
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/红果短剧.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/hgplayer",
     "~/Library/Caches/com.wails.hgplayer",
