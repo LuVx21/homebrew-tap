@@ -11,6 +11,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var (
@@ -20,6 +21,16 @@ var (
 
 	// 字符串优先级（越低越旧）
 	versionOrder = map[string]int{"preview": 0, "alpha": 1, "beta": 2, "rc": 3, "": 4}
+
+	httpClient = &http.Client{
+		Timeout: 10 * time.Second,
+		Transport: &http.Transport{
+			MaxIdleConns:        100,
+			MaxIdleConnsPerHost: 20,
+			IdleConnTimeout:     90 * time.Second,
+		},
+	}
+	BEARER_TOKEN = ""
 )
 
 type (
@@ -31,10 +42,10 @@ type (
 		intelName, intelSha256 string
 	}
 	Row struct {
-	RB           string `json:"rb"`
-	APP          string `json:"app"`
-	AppleSilicon string `json:"appleSilicon"`
-	Intel        string `json:"intel"`
+		RB           string `json:"rb"`
+		APP          string `json:"app"`
+		AppleSilicon string `json:"appleSilicon"`
+		Intel        string `json:"intel"`
 	}
 )
 
@@ -99,7 +110,15 @@ func aaa(rbPath string, row Row) {
 		return
 	}
 	_url := fmt.Sprintf("https://api.github.com/repos/%s/releases/latest", row.APP)
-	resp, err := http.Get(_url)
+	req, err := http.NewRequest(http.MethodGet, _url, nil)
+	if err != nil {
+		return
+	}
+	if BEARER_TOKEN != "" {
+		req.Header.Set("Authorization", "Bearer "+BEARER_TOKEN)
+	}
+
+	resp, err := httpClient.Do(req)
 	if err != nil || resp.StatusCode/100 != 2 {
 		fmt.Printf("%-40s 请求github api失败 %v`\n", row.APP, err)
 		return
@@ -123,25 +142,30 @@ func aaa(rbPath string, row Row) {
 		intelName: strings.ReplaceAll(row.Intel, "#{VERSION}", tagName),
 	}
 	for _, asset := range latest["assets"].([]any) {
-		aa := asset.(jsonObject)
-		name := ""
-		if aa["label"] != nil {
-			name = aa["label"].(string)
+		// 已找全
+		if v.appleSha256 != "" && v.intelSha256 != "" {
+			break
 		}
-		if name == "" && aa["name"] != nil {
+		aa := asset.(jsonObject)
+		labelName, name := "", ""
+		if aa["label"] != nil {
+			labelName = aa["label"].(string)
+		}
+		if aa["name"] != nil {
 			name = aa["name"].(string)
 		}
-		if name == "" {
+		if labelName == "" && name == "" {
 			continue
 		}
 		sha256 := strings.TrimPrefix(aa["digest"].(string), "sha256:")
 		if sha256 == "" {
 			sha256 = ":no_check"
 		}
-		if name == v.appleName {
+
+		if labelName == v.appleName || name == v.appleName {
 			v.appleSha256 = sha256
 		}
-		if name == v.intelName {
+		if labelName == v.intelName || name == v.intelName {
 			v.intelSha256 = sha256
 		}
 	}

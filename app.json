@@ -1,8 +1,0 @@
-[
-    {
-        "rb": "Casks/luvx-ad-cleaner.rb",
-        "app": "rddmwmddr/android-ad-cleaner",
-        "appleSilicon": "AndroidAdCleaner-#{VERSION}-mac-arm64.dmg",
-        "intel": "AndroidAdCleaner-#{VERSION}-mac-intel.dmg"
-    }
-]
