@@ -12,6 +12,8 @@ cask "luvx-clashx-meta" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "ClashX Meta.app"
 
   postflight_steps do

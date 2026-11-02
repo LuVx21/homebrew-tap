@@ -2,7 +2,7 @@ name: 更新 Homebrew Formula & Cask Versions
 
 on:
   schedule:
-    - cron: '0 20,8 * * *'  # Run every Monday at 6 AM UTC
+    - cron: '0 20,8 * * *'  # 每天 08:00 和 20:00 UTC 各运行一次
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -17,6 +17,10 @@ on:
 
 permissions:
   contents: write  # 允许写入仓库内容（提交代码）
+
+concurrency:
+  group: update-versions
+  cancel-in-progress: false
 
 jobs:
   update-versions:
@@ -35,9 +39,10 @@ jobs:
       - name: 运行Go代码
         id: update
         run: |
-          chmod +x ./scripts/*.sh && for f in ./scripts/*.sh; do ./"$f"; done
+          chmod +x ./scripts/*.sh
+          for f in ./scripts/*.sh; do ./"$f"; done
           go run ./scripts/update_versions.go
-          echo "changes=$(git diff --name-only | wc -l)" >> $GITHUB_OUTPUT
+          echo "changes=$(git diff --name-only | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
           # if git diff --quiet; then
           #   echo "has_changes=false" >> $GITHUB_OUTPUT
           # else

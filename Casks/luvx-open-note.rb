@@ -7,8 +7,8 @@ cask "luvx-open-note" do
   desc "Open Note"
   homepage "https://github.com/The-Flash-7/open-note"
 
-  app "OpenNote.app"
+  depends_on arch: :arm64
+  depends_on :macos
 
-  zap trash: [
-  ]
+  app "OpenNote.app"
 end

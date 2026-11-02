@@ -6,11 +6,10 @@ cask "luvx-clash-verge" do
 
   url "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v#{version}/Clash.Verge_#{version}_#{arch}.dmg"
   name "Clash Verge"
-  desc "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience"
+  desc "Modern GUI proxy client based on Tauri"
   homepage "https://github.com/clash-verge-rev/clash-verge-rev"
 
-  app "Clash Verge.app"
+  depends_on :macos
 
-  zap trash: [
-  ]
+  app "Clash Verge.app"
 end

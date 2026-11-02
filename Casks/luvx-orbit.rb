@@ -5,11 +5,10 @@ cask "luvx-orbit" do
 
   url "https://github.com/ycl-2004/Orbit/releases/download/v#{version}/Orbit-macOS-v#{version}.zip"
   name "orbit"
-  desc "macOS app switcher"
+  desc "App switcher"
   homepage "https://github.com/ycl-2004/Orbit"
 
-  app "Orbit.app"
+  depends_on :macos
 
-  zap trash: [
-  ]
+  app "Orbit.app"
 end

@@ -8,8 +8,7 @@ cask "luvx-clashmac" do
   desc "原生 ClashMac"
   homepage "https://github.com/666OS/ClashMac"
 
-  app "ClashMac.app"
+  depends_on :macos
 
-  zap trash: [
-  ]
+  app "ClashMac.app"
 end

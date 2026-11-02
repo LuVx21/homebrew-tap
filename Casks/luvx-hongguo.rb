@@ -8,7 +8,9 @@ cask "luvx-hongguo" do
   desc "红果免费短剧-yangbin1322"
   homepage "https://github.com/yangbin1322/hongguo-player"
 
-  app "红果短剧.app", target: "红果短剧.app"
+  depends_on :macos
+
+  app "红果短剧.app"
 
   postflight_steps do
     run "/usr/bin/xattr",
