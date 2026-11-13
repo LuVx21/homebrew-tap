@@ -1,8 +1,8 @@
 cask "luvx-ad-cleaner" do
   arch arm: "arm64", intel: "intel"
-  version "0.4.3"
-  sha256 arm:   "b7d2ca303027f3116c91ccb87b13dbe0674ec9860c82e24b696bf7ce253e4a04",
-         intel: "2f5fcb3f39da10c5579362d892bae2cf31be12bf3f2c12c7a19de0e8d020acd0"
+  version "0.4.4"
+  sha256 arm:   "b55b3544a84f0c541dba056692a4e14aeaa5b8998e5a02d267b948c8220d53fe",
+         intel: "051759f36caf61ce45f372a208877a2a15cafd3d472c99edfabd6bb9bc1ae569"
 
   url "https://github.com/rddmwmddr/android-ad-cleaner/releases/download/v#{version}/AndroidAdCleaner-#{version}-mac-#{arch}.dmg"
   name "ad-cleaner"
