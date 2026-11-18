@@ -1,7 +1,7 @@
 cask "luvx-clashmac" do
-  version "27.1.8"
-  sha256 arm:   "d48a0bcac1fe97e2cb06bf99541fba71e0f6e0060d954fbee8898ad268c508f9",
-         intel: "d48a0bcac1fe97e2cb06bf99541fba71e0f6e0060d954fbee8898ad268c508f9"
+  version "27.1.9"
+  sha256 arm:   "cc91a280cada2dded0045d2aedef86cd21320b462351fa2a06abbe83a822ff14",
+         intel: "cc91a280cada2dded0045d2aedef86cd21320b462351fa2a06abbe83a822ff14"
 
   url "https://github.com/666OS/ClashMac/releases/download/#{version}/ClashMac-#{version}.dmg"
   name "ClashMac"
