@@ -10,11 +10,11 @@ cask "luvx-hongguo" do
 
   depends_on :macos
 
-  app "红果短剧.app"
+  app "短剧播放器.app"
 
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/红果短剧.app"]
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/短剧播放器.app"]
   end
 
   zap trash: [

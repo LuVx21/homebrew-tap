@@ -11,7 +11,7 @@ cask "luvx-ad-cleaner" do
 
   depends_on :macos
 
-  app "安卓去广告.app"
+  app "肉呆去广告.app"
 
   zap trash: [
     "~/Library/Application Support/AndroidAdCleaner",
