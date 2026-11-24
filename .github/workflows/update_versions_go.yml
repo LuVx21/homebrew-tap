@@ -55,9 +55,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "🤖 Update Formula and Cask versions (Go)
+          git commit -m "$(git diff --cached --name-status)
 
-          Co-Authored-By: GitHub Action <action@github.com>"
+          🤖Co-Authored-By: GitHub Action"
           git push
       - name: 无新版本
         if: steps.update.outputs.changes == '0'

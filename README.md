@@ -24,3 +24,4 @@ Actions自动更新:
 |                              |                       |                                    |       |
 
 https://github.com/waligoraamodio288-rgb/hongguo-desktop-releases
+https://github.com/echoVic/clipnest
