@@ -1,7 +1,7 @@
 cask "luvx-hongguo" do
-  version "1.2.32"
-  sha256 arm:   "c6929cc1b5d663bd106796fe79951795197571628848e78c20eb9ca1376f4c92",
-         intel: "c6929cc1b5d663bd106796fe79951795197571628848e78c20eb9ca1376f4c92"
+  version "1.2.33"
+  sha256 arm:   "d78e0950904e24a0c5f34c734c8ae73b0d3f84e3e005c0be288e2bdf89e1669b",
+         intel: "d78e0950904e24a0c5f34c734c8ae73b0d3f84e3e005c0be288e2bdf89e1669b"
 
   url "https://github.com/yangbin1322/hongguo-player/releases/download/v#{version}/hongguo-v#{version}-macos-universal.zip"
   name "hongguo"
