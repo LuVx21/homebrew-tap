@@ -8,11 +8,12 @@ github="raw.githubusercontent.com"
 
 # 非官方
 cask_urls=(
-    "https://${github}/lifedever/homebrew-tap/refs/heads/main/Casks/pastememo.rb"
-    "https://${github}/lifedever/homebrew-tap/refs/heads/main/Casks/task-tick.rb"
     "https://${github}/chen08209/homebrew-tap/refs/heads/main/Casks/flclash.rb"
     "https://${github}/Ender-Wang/homebrew-tap/refs/heads/main/Casks/swifka.rb"
+    "https://${github}/lifedever/homebrew-tap/refs/heads/main/Casks/pastememo.rb"
+    "https://${github}/lifedever/homebrew-tap/refs/heads/main/Casks/task-tick.rb"
     "https://${github}/momenbasel/homebrew-pesty/refs/heads/main/Casks/pesty.rb"
+    "https://${github}/t8y2/homebrew-tap/refs/heads/main/Casks/motty.rb"
 )
 # 常用
 cask_urls+=(
