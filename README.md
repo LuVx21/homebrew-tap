@@ -9,6 +9,7 @@ Actions自动更新:
 | Casks/luvx-clashx-meta.rb        | MetaCubeX/ClashX.Meta           | ClashX Meta.zip                                               |                                                                |
 | Casks/luvx-echo-music.rb         | hoowhoami/EchoMusic             | EchoMusic-#{VERSION}-mac-arm64.zip                            | EchoMusic-#{VERSION}-mac-x64.zip                               |
 | Casks/luvx-hongguo.rb            | yangbin1322/hongguo-player      | hongguo-v#{VERSION}-macos-universal.zip                       | hongguo-v#{VERSION}-macos-universal.zip                        |
+| Casks/luvx-kitty-tools.rb        | YyAdnBug/kitty-tools            | Kitty.Tools_#{VERSION}_arm64.dmg                              | Kitty.Tools_#{VERSION}_x86_64.dmg                              |
 | Casks/luvx-macoptimizer.rb       | ddlmanus/MacOptimizer           | MacOptimizer-v#{VERSION}-AppleSilicon.dmg                     | MacOptimizer-v#{VERSION}-Intel.dmg                             |
 | Casks/luvx-mdm.rb                | anefzaoui/misterdownloadmanager | MisterDownloadManager-#{VERSION}-macos-arm64-experimental.dmg | MisterDownloadManager-#{VERSION}-macos-x86_64-experimental.dmg |
 | Casks/luvx-orbit.rb              | ycl-2004/Orbit                  | Orbit-macOS-v#{VERSION}.zip                                   | Orbit-macOS-v#{VERSION}.zip                                    |
