@@ -1,9 +1,8 @@
 cask "luvx-kitty-tools" do
   arch arm: "arm64", intel: "x86_64"
-
-  version "0.10.4"
-  sha256 arm:   "93ce5be177b6c9f0eb0d765de11b85e44fec4e7bfcb3b076eec981e670a0139f",
-         intel: "ecf88dc94114947d7941d18470e36355bc833b3245d187ff68565b529db8d047"
+  version "macos-v0.10.4"
+  sha256 arm:   "",
+         intel: ""
 
   url "https://github.com/YyAdnBug/kitty-tools/releases/download/macos-v#{version}/Kitty.Tools_#{version}_#{arch}.dmg"
   name "kitty-tools"
